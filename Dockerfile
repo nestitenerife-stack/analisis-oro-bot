@@ -4,4 +4,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py .
 EXPOSE 5000
-CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:$PORT", "--workers", "2"]
+CMD gunicorn main:app --bind 0.0.0.0:$PORT --workers 2
